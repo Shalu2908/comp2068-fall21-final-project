@@ -4,6 +4,6 @@ module.exports = {
     "github": {
         "clientID": "8fde132439cddae7559c",
         "clientSecret": "981f248fd7e9dd215bb0e380164ef4dd8eaef603",
-        "callbackURL": "http://Localhost:3000/github/callback"
+        "callbackURL": "https://comp2068-fall21-final-project.herokuapp.com/"
     }
 }
