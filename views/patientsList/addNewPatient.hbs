@@ -1,0 +1,32 @@
+<h1>
+    {{title}}
+</h1>
+<!-- A form to fill to add new patient -->
+<form method="POST">
+    <fieldset>
+        <label for="name" class="col-2">
+            Name:
+        </label>
+        <input name="name" id="name" required />
+    </fieldset>
+    <fieldset>
+        <label for="date" class="col-2">
+            Date:
+        </label>
+        <input name="date" id="date" required type="date" />
+    </fieldset>
+    <fieldset>
+        <label for="category" class="col-2">
+            Category:
+        </label>
+        <select name="category" id="category" >
+            {{#each categories}}
+                <option>{{this.name}}</option>
+            {{/each}}
+            </label>
+        </select>
+    </fieldset>
+    <button class="offset-3 btn btn-primary">
+        Add
+    </button>
+</form>

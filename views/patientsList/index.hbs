@@ -1,0 +1,30 @@
+<h1> {{title}}</h1>
+<!-- Add links to CRUD operations -->
+{{#if user}}
+    <a href="/patientsList/addNewPatient" class = "btn btn-info">Add a new patient</a>
+{{/if}}
+{{!-- To Show data on  the PatientsList Page--}}
+<table class="table table-bordered table-hover" style="font-family:Georgia, Garamond, Serif;color: rgb(255, 136, 0); font-style:italic; font-size:30px">
+    <thead>
+    <th>Name</th>
+    <th>Date</th>
+    <th>Category</th>
+    <th>Status</th>
+    <th></th>
+    </thead>
+    {{#each dataset}}
+        <tr>
+            <td>{{this.name}}</td>
+            <td>{{toShortDate this.date }}</td>
+            <td>{{this.category}}</td>
+            <td>{{this.status}}</td>
+            <!-- navigate outside of the loop  -->
+            {{#if ../user}}
+
+                <td>
+                    <a href="/patientsList/edit/{{this._id}}" class="btn btn-primary">Edit</a>
+                <a href= "patientsList/delete/{{this._id}}" class="btn btn-danger" onclick="return confirmDelete()">Delete</a></td>
+            {{/if}}
+        </tr>
+    {{/each}}
+</table>
